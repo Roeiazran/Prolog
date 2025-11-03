@@ -1,4 +1,3 @@
-
 % base case: K = 1.
 element_at(X, [H|_], 1) :- X = H, !.
 
