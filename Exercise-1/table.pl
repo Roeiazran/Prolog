@@ -1,4 +1,4 @@
-assign(true, true) :- write('true'), write('  '), write('fail'), write('  ').
+assign(true, true) :- write('true'), write('  '), write('true'), write('  ').
 assign(true, false) :- write('true'), write('  '), write('fail'), write('  ').
 assign(false, true) :- write('fail'), write('  '), write('true'), write('  ').
 assign(false, false) :- write('fail'), write('  '), write('fail'), write('  ').
