@@ -1,7 +1,9 @@
-assign(true, true) :- write('true'), write('  '), write('true'), write('  ').
-assign(true, false) :- write('true'), write('  '), write('fail'), write('  ').
-assign(false, true) :- write('fail'), write('  '), write('true'), write('  ').
-assign(false, false) :- write('fail'), write('  '), write('fail'), write('  ').
+assign(X,Y) :- member(X, [true, false]), member(Y, [true, false]).
+
+write_xy(true, true) :- write('true  true  ').
+write_xy(true, false) :- write('true  fail  ').
+write_xy(false, true) :- write('fail  true  ').
+write_xy(false, false) :- write('fail  fail  ').
 
 and(X,Y) :- X,Y.
 not(X) :- \+X.
@@ -16,6 +18,7 @@ execute(Expr) :- \+call(Expr), write('fail').
 
 table(X, Y, Expr) :- 
     assign(X, Y),
+    write_xy(X,Y),
     execute(Expr),
     nl,
     fail.
