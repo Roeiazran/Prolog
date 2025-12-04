@@ -12,7 +12,6 @@ fun insert_at_none (i, lst)
 
 datatype 'a binary_tree = Empty | Node of 'a * 'a binary_tree * 'a binary_tree;
 
-
 (* 2. *)
 fun add_to_search_tree (Empty, x) =
         Node (x, Empty, Empty)
@@ -56,10 +55,12 @@ fun eval (Var x) env = lookup x env
   | eval (And(e1,e2)) env = eval e1 env andalso eval e2 env
   | eval (Or(e1,e2))  env = eval e1 env orelse  eval e2 env;
 
+fun rev [] = []
+  | rev (x :: xs) = rev xs @ [x];
 
 fun table vars expr =
     let
         val assignments = allAssignments vars
     in
-        map (fn env => (env, eval expr env)) assignments
+        map (fn env => (rev env, eval expr env)) assignments
     end;
