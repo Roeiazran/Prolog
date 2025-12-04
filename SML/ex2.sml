@@ -63,5 +63,3 @@ fun table vars expr =
     in
         map (fn env => (env, eval expr env)) assignments
     end;
-
-table ["a", "b"] (Or(Var "a", Var "b"));
