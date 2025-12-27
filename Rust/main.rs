@@ -32,7 +32,8 @@ fn main() {
 
     // test4 (While loop, Factorial) starting with s1 (x=5) -> y=120
     run_test("test4", test4(), s1(), "y");
-
+    
+    run_test("test5", test5(), s0(), "x");
     run_test("test5", test5(), s0(), "a");
     run_test("test5", test5(), s0(), "b");
     run_test("test5", test5(), s0(), "c");
@@ -40,6 +41,7 @@ fn main() {
     run_test("test6", test6(), s3(), "x");
     run_test("test7", test7(), s4(), "x");
     run_test("test8", test8(), s5(), "z");
+
 
 
 
